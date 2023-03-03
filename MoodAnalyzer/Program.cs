@@ -1,4 +1,6 @@
-﻿namespace MoodAnalyzer
+﻿using messageAnalyzer;
+
+namespace MoodAnalyzer
 {
     internal class Program
     {
@@ -9,9 +11,10 @@
             bool flag = true;
 
             string moodly = "\0";
-
+            
             while(flag)
             {
+                
                 Console.WriteLine("\nWell-Come to MoodAnalyzer Program\n");
                 Console.WriteLine("Options");
                 Console.WriteLine("1 : Mood Analzer");
@@ -25,7 +28,7 @@
                         moodly = Convert.ToString(Console.ReadLine());
 
                         MoodAnalyzerProblem mood = new MoodAnalyzerProblem(moodly);
-                        Console.WriteLine(mood.AnalseMood());
+                        Console.WriteLine("\n\t"+mood.AnalseMood()+"\n");
 
                         Console.ReadKey();
                         break;
@@ -39,7 +42,7 @@
                 }
                 
             }
-
+                
             
         }
     }

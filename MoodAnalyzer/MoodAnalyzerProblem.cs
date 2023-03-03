@@ -14,7 +14,7 @@ namespace messageAnalyzer
         {
             this.message = message;
         }
-        public string Analsemessage()
+        public string AnalseMood()
         {
             try
             {
