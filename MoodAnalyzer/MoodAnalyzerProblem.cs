@@ -16,15 +16,24 @@ namespace messageAnalyzer
         }
         public string Analsemessage()
         {
-            if (this.message.Contains("sad"))
+            try
             {
-                return "SAD";
+                if (this.message.Contains("sad"))
+                {
+                    return "SAD";
 
+                }
+                else
+                {
+                    return "HAPPY";
+                }
             }
-            else
+            catch(NullReferenceException)
             {
                 return "HAPPY";
             }
+            
+            
         }
     }
 }
