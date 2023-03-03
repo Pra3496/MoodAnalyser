@@ -5,21 +5,21 @@ namespace MoodAnalyzerTest
     public class Tests
     {
      
-        MoodAnalyzerProblem mood = new MoodAnalyzerProblem();
+        
 
         [Test]
         public void GivenSadMood_WhenAnalzer_ShouldReturnSad()
         {
-            string result = mood.AnalseMood("I am in sad mood");
-
+            MoodAnalyzerProblem mood = new MoodAnalyzerProblem("I am in sad mood");
+            string result = mood.AnalseMood();
             Assert.AreEqual("SAD",result);
         }
 
         [Test]
         public void GivenSadMood_WhenAnalzer_ShouldReturnHappy()
         {
-            string result = mood.AnalseMood("I am in happy mood");
-
+            MoodAnalyzerProblem mood = new MoodAnalyzerProblem("I am in happy mood");
+            string result = mood.AnalseMood();
             Assert.AreEqual("HAPPY", result);
         }
     }

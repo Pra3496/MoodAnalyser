@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            MoodAnalyzerProblem mood = new MoodAnalyzerProblem();
+            
 
            
 
@@ -25,7 +25,10 @@
                     case 1:
                         Console.Write("\nEnter your statement : ");
                         moodly = Convert.ToString(Console.ReadLine());
-                        Console.WriteLine(mood.AnalseMood(moodly));
+
+                        MoodAnalyzerProblem mood = new MoodAnalyzerProblem(moodly);
+                        Console.WriteLine(mood.AnalseMood());
+
                         Console.ReadKey();
                         break;
                     case 0:
