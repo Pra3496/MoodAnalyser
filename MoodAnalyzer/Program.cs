@@ -24,12 +24,14 @@ namespace MoodAnalyzer
                 switch (option)
                 {
                     case 1:
+                        MoodAnalyzerProblem mood;
+                      
                         Console.Write("\nEnter your statement : ");
                         moodly = Convert.ToString(Console.ReadLine());
 
-                        MoodAnalyzerProblem mood = new MoodAnalyzerProblem(moodly);
-                        Console.WriteLine("\n\t"+mood.AnalseMood()+"\n");
-
+                        mood = new MoodAnalyzerProblem(moodly);
+                        Console.WriteLine("\n\t" + mood.AnalseMood() + "\n");
+                       
                         Console.ReadKey();
                         break;
                     case 0:
