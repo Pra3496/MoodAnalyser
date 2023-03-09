@@ -105,7 +105,16 @@ namespace MoodAnalyzerTest
 
         }
 
-        
+        [Test]
+        public void GivenMoodAnalyzerClassName_shouldReturn_MoodAnalyzerObjec_UsingPar()
+        {
+            string message = "HAPPY";
+            object expected = new MoodAnalyzerProblem(message);
+
+            object obj = MoodAnalyzerReflection.CreateMoodAnalyzerUsingParameterizeConstructor("MoodAnalyzer.MoodAnalyzerProblem", "MoodAnalyzerProblem","HAPPY");
+            expected.Equals(obj);
+        }
+
 
 
     }

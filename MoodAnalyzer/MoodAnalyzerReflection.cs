@@ -11,8 +11,30 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyzerReflection
     {
-        
-        public static object CreateMoodAnalyzer(string className,string constructorName)
+        public static object CreateMoodAnalyzerUsingParameterizeConstructor(string className, string constructorName,string message)
+        {
+            Type type = typeof(MoodAnalyzerProblem);
+
+            if(type.Name.Equals(className) || type.FullName.Equals(className))
+            {
+                if(type.Name.Equals(constructorName))
+                {
+                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
+                    object instance = ctor.Invoke(new object[] { message });
+                    return instance;
+                }
+                else
+                {
+                    throw new MoodAnalyzerException(MoodAnalyzerExceptionType.NO_SUCH_METHOD, "Constructor is Not Found");
+                }
+            }
+            else
+            {
+                throw new MoodAnalyzerException(MoodAnalyzerExceptionType.NO_SUCH_CLASS, "Class is Not Found");
+            }
+
+        }
+            public static object CreateMoodAnalyzer(string className,string constructorName)
         { 
              string pattern = @"."+constructorName+"$";
             Match result = Regex.Match(pattern, className);
