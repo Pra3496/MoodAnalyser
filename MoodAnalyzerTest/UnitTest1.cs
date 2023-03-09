@@ -105,6 +105,11 @@ namespace MoodAnalyzerTest
 
         }
 
+
+
+
+
+
         [Test]
         public void GivenMoodAnalyzerClassName_shouldReturn_MoodAnalyzerObjec_UsingPar()
         {
@@ -129,6 +134,24 @@ namespace MoodAnalyzerTest
             catch (MoodAnalyzerException moodAnlzerException)
             {
                 Assert.AreEqual("Class Not Found", moodAnlzerException.Message);
+            }
+
+        }
+
+        [Test]
+        public void GivenMoodAnalyzerClassName_shouldReturn_Exception_UsingPar_METHOD_NOT_FOUND()
+        {
+            try
+            {
+                string message = "";
+                object expected = new MoodAnalyzerProblem(message);
+
+                Object obj = MoodAnalyzerReflection.CreateMoodAnalyzerUsingParameterizeConstructor("MoodAnalyzer.MoodAnalyzerProblem", "MoodAnalyzer", "HAPPY");
+                expected.Equals(obj);
+            }
+            catch (MoodAnalyzerException moodAnlzerException)
+            {
+                Assert.AreEqual("Constructor is Not Found", moodAnlzerException.Message);
             }
 
         }
