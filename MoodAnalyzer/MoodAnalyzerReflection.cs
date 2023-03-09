@@ -30,7 +30,7 @@ namespace MoodAnalyzer
             }
             else
             {
-                throw new MoodAnalyzerException(MoodAnalyzerExceptionType.NO_SUCH_CLASS, "Class is Not Found");
+                throw new MoodAnalyzerException(MoodAnalyzerExceptionType.NO_SUCH_CLASS, "Class Not Found");
             }
 
         }

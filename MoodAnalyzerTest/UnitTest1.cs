@@ -115,6 +115,24 @@ namespace MoodAnalyzerTest
             expected.Equals(obj);
         }
 
+        [Test]
+        public void GivenMoodAnalyzerClassName_shouldReturn_Exception_UsingPar_CLASS_NOT_FOUND()
+        {
+            try
+            {
+                string message = "";
+                object expected = new MoodAnalyzerProblem(message);
+
+                Object obj = MoodAnalyzerReflection.CreateMoodAnalyzerUsingParameterizeConstructor("MoodAnalyzer.MoodAnalyzer", "MoodAnalyzerProblem","HAPPY");
+                expected.Equals(obj);
+            }
+            catch (MoodAnalyzerException moodAnlzerException)
+            {
+                Assert.AreEqual("Class Not Found", moodAnlzerException.Message);
+            }
+
+        }
+
 
 
     }
