@@ -71,5 +71,42 @@ namespace MoodAnalyzerTest
             expected.Equals(obj);
         }
 
+
+        [Test]
+        public void GivenMoodAnalyzerClassName_shouldReturn_ExceptionCLASS_NOT_FOUND()
+        {
+            try
+            {
+                string message = "";
+                object expectedClass = new MoodAnalyzerProblem(message);
+
+                Object obj = MoodAnalyzerReflection.CreateMoodAnalyzer("MoodAnalyzer.MoodAnalyzerProblem", "MoodAnalyzer");
+            }
+            catch (MoodAnalyzerException moodAnlzerException)
+            {
+                Assert.AreEqual("Class Not Found", moodAnlzerException.Message);
+            }
+
+        }
+        [Test]
+        public void GivenMoodAnalyzerClassName_shouldReturn_ExceptionCONSTRUCTOR_NOT_FOUND()
+        {
+            try
+            {
+                string message = "";
+                object expectedClass = new MoodAnalyzerProblem(message);
+
+                Object obj = MoodAnalyzerReflection.CreateMoodAnalyzer("MoodAnalyzer.MoodAnalyzerProblem", "MoodAnalyzer");
+            }
+            catch (MoodAnalyzerException moodAnlzerException)
+            {
+                Assert.AreEqual("Constructor is Not Found", moodAnlzerException.Message);
+            }
+
+        }
+
+        
+
+
     }
 }
