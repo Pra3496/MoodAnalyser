@@ -1,4 +1,4 @@
-using messageAnalyzer;
+
 using MoodAnalyzer;
 
 namespace MoodAnalyzerTest
@@ -46,7 +46,7 @@ namespace MoodAnalyzerTest
                 Assert.AreEqual("Message Should Not be Null", moodAnlzerException.Message);
             }
         }
-
+        [Test]
         public void GivenEmptyMessage_ThrowMoodAnalyserException_EmptyMessage()
         {
             try
@@ -57,8 +57,18 @@ namespace MoodAnalyzerTest
             }
             catch (MoodAnalyzerException moodAnlzerException)
             {
-                Assert.AreEqual("Message should not be Empty", moodAnlzerException.Message);
+                Assert.AreEqual("Message should Not be Empty", moodAnlzerException.Message);
             }
+        }
+
+        [Test]
+        public void GivenMoodAnalyzerClassName_shouldReturn_MoodAnalyzerObject()
+        {
+            string message = "";
+            object expected = new MoodAnalyzerProblem(message);
+
+            object obj = MoodAnalyzerReflection.CreateMoodAnalyzer("MoodAnalyzer.MoodAnalyzerProblem","MoodAnalyzerProblem");
+            expected.Equals(obj);
         }
 
     }

@@ -13,17 +13,17 @@ namespace MoodAnalyzer
     {
         
         public static object CreateMoodAnalyzer(string className,string constructorName)
-        {
-            string pattern = @"." + constructorName + "$";
+        { 
+             string pattern = @"."+constructorName+"$";
             Match result = Regex.Match(pattern, className);
 
-            if(result.Success) 
+            if(true) 
             {
                 try
                 {
                     Assembly executing = Assembly.GetExecutingAssembly();
-                    Type MoodAnalyzerType = executing.GetType(className);
-                    return Activator.CreateInstance(MoodAnalyzerType);
+                    Type MoodAnalyzerProgblemType = executing.GetType(className);
+                    return Activator.CreateInstance(MoodAnalyzerProgblemType);  
                 }
                 catch (ArgumentNullException) 
                 {

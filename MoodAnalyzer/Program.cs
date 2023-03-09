@@ -1,4 +1,6 @@
-﻿using messageAnalyzer;
+﻿using System;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace MoodAnalyzer
 {
@@ -34,6 +36,7 @@ namespace MoodAnalyzer
                        
                         Console.ReadKey();
                         break;
+                  
                     case 0:
                         flag = false;
                         break;

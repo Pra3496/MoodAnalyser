@@ -1,16 +1,18 @@
-﻿using MoodAnalyzer;
+﻿
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static MoodAnalyzer.MoodAnalyzerException;
 
-namespace messageAnalyzer
+namespace MoodAnalyzer
 {
     public class MoodAnalyzerProblem
     {
         string message;
+
+        public MoodAnalyzerProblem()
+        {
+            //message
+        }
+
 
         public MoodAnalyzerProblem(string message)
         {
